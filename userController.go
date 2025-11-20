@@ -14,10 +14,10 @@ func NewUserService() *UserService {
 	}
 }
 
-func (s *UserService) GetAll() ([]*models.User, error) {
-	result := []*models.User{}
+func (s *UserService) GetAll() ([]string, error) {
+	result := []string{}
 	for _, v := range s.data {
-		result = append(result, v)
+		result = append(result, v.Name)
 	}
 	return result, nil
 }
